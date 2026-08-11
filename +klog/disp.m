@@ -36,16 +36,21 @@ arguments
     msg
     color {mustBeMember(color, ["red", "orange", "black"])}
 end
+
+msg = char(msg);
+msg = strrep(msg, '/', '//');
+msg = strrep(msg, '%', '%%');
+
 switch color
     case "black"
-        fprintf(1, [char(msg) '\n'])
+        fprintf(1, [msg '\n'])
 
     case "red"
-        fprintf(2, [char(msg) '\n'])
+        fprintf(2, [msg '\n'])
 
     case "orange"
         msg = make_orange(msg);
-        fprintf(1, [char(msg) '\n'])
+        fprintf(1, [msg '\n'])
 end
 end
 
