@@ -39,6 +39,7 @@ end
 
 msg = char(msg);
 msg = strrep(msg, '/', '//');
+msg = strrep(msg, '\', '\\');
 msg = strrep(msg, '%', '%%');
 
 switch color
